@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Henna by Fida</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <a href="index.html" class="nav-logo">Henna by Fida</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <p class="section-label">Browse Our Work</p>
+      <h1 class="page-title">Gallery</h1>
+      <p class="page-sub">Handcrafted designs for brides, functions, and everything in between.</p>
+    </div>
+  </div>
+
+  <!-- FILTER TABS -->
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="bridal">Bridal</button>
+        <button class="filter-btn" data-filter="function">Function</button>
+        <button class="filter-btn" data-filter="closeup">Close-ups</button>
+      </div>
+
+      <div class="gallery-masonry" id="galleryGrid">
+        <!-- Row 1 -->
+        <div class="gallery-item bridal tall" data-category="bridal">
+          <img src="gallery-bridal-full.jpg" alt="Bridal Full Hand Henna Design" class="gallery-image">
+          <div class="gallery-overlay"><span>Bridal — Full Hand</span></div>
+        </div>
+        <div class="gallery-item bridal" data-category="bridal">
+          <img src="gallery-bridal-feet.jpg" alt="Bridal Feet Henna Design" class="gallery-image">
+          <div class="gallery-overlay"><span>Bridal — Feet</span></div>
+        </div>
+        <div class="gallery-item function" data-category="function">
+          <img src="gallery-function-engagement.jpg" alt="Engagement Function Henna Design" class="gallery-image">
+          <div class="gallery-overlay"><span>Function — Engagement</span></div>
+        </div>
+        <div class="gallery-item closeup tall" data-category="closeup">
+          <img src="gallery-closeup-detail.jpg" alt="Henna Design Close-up Detail" class="gallery-image">
+          <div class="gallery-overlay"><span>Close-up Detail</span></div>
+        </div>
+        <div class="gallery-item bridal" data-category="bridal">
+          <img src="gallery-bridal-2.jpg" alt="Bridal Henna Back Hand" class="gallery-image">
+          <div class="gallery-overlay"><span>Bridal — Back Hand</span></div>
+        </div>
+        <div class="gallery-item function" data-category="function">
+          <img src="gallery-function-1.jpg" alt="Function Henna Design" class="gallery-image">
+          <div class="gallery-overlay"><span>Function — Baby Shower</span></div>
+        </div>
+        <div class="gallery-item closeup" data-category="closeup">
+          <img src="gallery-closeup-1.jpg" alt="Henna Design Close-up" class="gallery-image">
+          <div class="gallery-overlay"><span>Close-up — Mandala</span></div>
+        </div>
+        <div class="gallery-item bridal tall" data-category="bridal">
+          <img src="gallery-bridal-1.jpg" alt="Bridal Henna Both Hands" class="gallery-image">
+          <div class="gallery-overlay"><span>Bridal — Both Hands</span></div>
+        </div>
+        <div class="gallery-item function" data-category="function">
+          <img src="gallery-function-1.jpg" alt="Function Henna Reception" class="gallery-image">
+          <div class="gallery-overlay"><span>Function — Reception</span></div>
+        </div>
+        <div class="gallery-item closeup" data-category="closeup">
+          <img src="gallery-closeup-1.jpg" alt="Henna Design Floral" class="gallery-image">
+          <div class="gallery-overlay"><span>Close-up — Floral</span></div>
+        </div>
+        <div class="gallery-item bridal" data-category="bridal">
+          <img src="gallery-bridal-2.jpg" alt="Bridal Henna Feet" class="gallery-image">
+          <div class="gallery-overlay"><span>Bridal — Feet Design</span></div>
+        </div>
+        <div class="gallery-item function tall" data-category="function">
+          <img src="gallery-function-1.jpg" alt="Function Group Henna Work" class="gallery-image">
+          <div class="gallery-overlay"><span>Function — Group Work</span></div>
+        </div>
+      </div>
+
+      <!-- LOAD MORE -->
+      <div class="section-cta" style="margin-top:3rem">
+        <p style="color:var(--text-muted); margin-bottom:1rem; font-size:0.9rem;">Want to see more? Follow us on Instagram.</p>
+        <a href="https://instagram.com" target="_blank" class="btn btn-outline">Follow on Instagram</a>
+        <a href="booking.html" class="btn btn-primary" style="margin-left:1rem">Book Your Henna</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Henna by Fida</p>
+        <p>Handcrafted henna art from Kerala.<br/>Bridal, functions & home visits.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" class="social-link">Instagram</a>
+          <a href="https://wa.me/919999999999" target="_blank" class="social-link">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="booking.html">Book Appointment</a></li>
+          <li><a href="shop.html">Shop</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📍 Kerala, India</p>
+        <p>📱 <a href="https://wa.me/919999999999">+91 99999 99999</a></p>
+        <p>📸 <a href="https://instagram.com" target="_blank">@fie._henna</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Henna by Fida. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919999999999?text=Hello!%20I%20visited%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20henna%20services." target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.118 1.524 5.853L.057 23.98l6.305-1.653A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.371l-.36-.214-3.733.979.995-3.633-.236-.374A9.818 9.818 0 1112 21.818z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
