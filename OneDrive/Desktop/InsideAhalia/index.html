@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inside Ahalia | Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    :root{--green:#1a9e35;--teal:#00c9b1;--navy:#0a1628;}
+    body{font-family:"DM Sans",sans-serif;}
+    .login-page{min-height:100vh;display:flex;overflow:hidden;position:relative;}
+    .login-left{flex:1.2;position:relative;background-image:url("campus_bg.jpg");background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:flex-end;padding:64px 56px;}
+    .login-left::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.2) 52%,rgba(0,0,0,0) 100%);}
+    .login-left h1{font-family:"Syne",sans-serif;font-size:clamp(30px,4vw,52px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:12px;position:relative;text-shadow:0 2px 14px rgba(0,0,0,0.45);}
+    .login-left p{font-size:16px;color:rgba(255,255,255,0.82);position:relative;}
+    .login-right{flex:0 0 420px;background:#f2f5f2;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:56px 44px;}
+    .login-app-icon{width:62px;height:62px;background:linear-gradient(145deg,#3ecf5a,#1aa334);border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:"Syne",sans-serif;font-size:28px;font-weight:800;color:#fff;margin-bottom:16px;box-shadow:0 6px 20px rgba(26,163,52,0.3);}
+    .login-right h2{font-family:"Syne",sans-serif;font-size:24px;font-weight:800;color:#111;margin-bottom:6px;text-align:center;}
+    .login-sub{font-size:14px;color:#888;margin-bottom:28px;text-align:center;}
+    .input-group{width:100%;margin-bottom:16px;}
+    .input-group label{display:block;font-size:13px;font-weight:600;color:#222;margin-bottom:7px;}
+    .input-group input{width:100%;padding:13px 16px;background:#fff;border:1.5px solid #dde3dd;border-radius:10px;color:#222;font-family:"DM Sans",sans-serif;font-size:14px;outline:none;transition:border-color 0.25s,box-shadow 0.25s;}
+    .input-group input::placeholder{color:#bbb;}
+    .input-group input:focus{border-color:#1aa334;box-shadow:0 0 0 3px rgba(26,163,52,0.12);}
+    .btn-login{width:100%;margin-top:8px;padding:15px;background:var(--green);color:#fff;border:none;border-radius:50px;font-family:"Syne",sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:background 0.25s,transform 0.15s;}
+    .btn-login:hover{background:#157d29;transform:translateY(-1px);}
+    .login-terms{margin-top:14px;font-size:12px;color:#aaa;text-align:center;}
+    .login-lang{position:absolute;top:20px;right:20px;z-index:10;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.25);border-radius:100px;padding:4px;}
+    .lang-btn{background:none;border:none;color:rgba(255,255,255,0.8);font-family:"DM Sans",sans-serif;font-size:12px;font-weight:600;padding:5px 11px;border-radius:100px;cursor:pointer;letter-spacing:0.5px;transition:background 0.2s,color 0.2s;}
+    .lang-btn:hover{color:#fff;}
+    .lang-btn.active-lang{background:var(--teal);color:var(--navy);}
+    @media(max-width:768px){
+      .login-page{flex-direction:column;}
+      .login-left{flex:0 0 200px;padding:32px 24px 20px;}
+      .login-left h1{font-size:24px;}
+      .login-right{flex:1;padding:28px 24px 40px;}
+      .login-app-icon{width:50px;height:50px;font-size:20px;}
+      .login-lang{top:12px;right:12px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="login-lang">
+    <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+    <button class="lang-btn" data-lang="ml" onclick="switchLang('ml')">ML</button>
+    <button class="lang-btn" data-lang="hi" onclick="switchLang('hi')">HI</button>
+  </div>
+  <div class="login-page">
+    <div class="login-left">
+      <h1 data-i18n="welcomeLeft">Welcome to Ahalia</h1>
+      <p data-i18n="taglineLeft">Where Innovation Meets Education</p>
+    </div>
+    <div class="login-right">
+      <div class="login-app-icon">A</div>
+      <h2 data-i18n="loginTitle">Inside Ahalia</h2>
+      <p class="login-sub" data-i18n="loginSub">Enter your details to access the smart campus</p>
+      <div class="input-group">
+        <label data-i18n="labelName">Your Name</label>
+        <input type="text" id="inputName" data-i18n="placeholderName" placeholder="Enter your full name" autocomplete="off" />
+      </div>
+      <div class="input-group">
+        <label data-i18n="labelCollege">College Name</label>
+        <input type="text" id="inputCollege" data-i18n="placeholderCollege" placeholder="Enter your college name" autocomplete="off" />
+      </div>
+      <button class="btn-login" onclick="doLogin()" data-i18n="btnEnter">Enter Campus &rarr;</button>
+      <p class="login-terms" data-i18n="loginTerms">By entering, you agree to our terms and conditions</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

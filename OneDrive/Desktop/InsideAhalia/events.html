@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inside Ahalia | Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Inside <span>Ahalia</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html" id="nav-home" data-i18n="navHome">Home</a>
+      <a href="inside.html" id="nav-inside" data-i18n="navInside">Inside Ahalia</a>
+      <a href="about.html" id="nav-about" data-i18n="navAbout">About</a>
+      <a href="contact.html" id="nav-contact" data-i18n="navContact">Contact</a>
+      <a href="index.html" class="btn-logout" onclick="doLogout();return false;" data-i18n="navLogout">Logout</a>
+      <div class="lang-switcher nav-lang-mobile">
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="ml" onclick="switchLang('ml')">ML</button>
+        <button class="lang-btn" data-lang="hi" onclick="switchLang('hi')">HI</button>
+      </div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" data-lang="ml" onclick="switchLang('ml')">ML</button>
+      <button class="lang-btn" data-lang="hi" onclick="switchLang('hi')">HI</button>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="page-body">
+    <div class="page-header">
+      <div><h2 data-i18n="eventsTitle">Campus Events</h2><p style="color:var(--muted);font-size:14px;margin-top:8px" data-i18n="eventsSub">Live schedule</p></div>
+      <a href="inside.html" class="back-btn" data-i18n="backBtn">&larr; Back</a>
+    </div>
+    <div class="search-wrapper">
+      <div class="search-box">
+        <span class="search-icon">&#128269;</span>
+        <input type="text" id="eventSearch" data-i18n="searchEvents" placeholder="Search events, workshops, seminars..." oninput="filterEvents(this.value)" autocomplete="off" />
+        <button class="search-clear" id="eventClear" onclick="clearSearch('event')">&#10005;</button>
+      </div>
+      <div class="no-results" id="eventNoResults"><span>&#127881;</span><span data-i18n="noEvents">No events found. Check back soon!</span></div>
+    </div>
+    <div class="events-coming">
+      <div class="coming-icon">&#127881;</div>
+      <div class="coming-badge" data-i18n="comingSoon">Coming Soon</div>
+      <h2 class="coming-title" data-i18n="comingTitle">Events Are On Their Way</h2>
+      <p class="coming-desc" data-i18n="comingDesc">We are setting up the live event schedule. Check back soon.</p>
+      <div class="coming-cards">
+        <div class="coming-card"><div class="coming-card-icon">&#127963;</div><div class="coming-card-title" data-i18n="comingWork">Workshops</div></div>
+        <div class="coming-card"><div class="coming-card-icon">&#129504;</div><div class="coming-card-title" data-i18n="comingQuiz">Quizzes</div></div>
+        <div class="coming-card"><div class="coming-card-icon">&#127908;</div><div class="coming-card-title" data-i18n="comingSem">Seminars</div></div>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="nav-logo">Inside <span>Ahalia</span></div><p data-i18n="footerDesc">Smart Campus Navigation System.</p></div>
+      <div class="footer-links-group"><h4 data-i18n="footerNav">Navigate</h4><a href="home.html" data-i18n="navHome">Home</a><a href="inside.html" data-i18n="navInside">Inside Ahalia</a></div>
+      <div class="footer-links-group"><h4 data-i18n="footerInfo">Information</h4><a href="about.html" data-i18n="navAbout">About Us</a><a href="contact.html" data-i18n="navContact">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> <span>Inside Ahalia</span> &middot; <span data-i18n="footerRights">All rights reserved.</span></p>
+      <p data-i18n="footerBuilt">Built by Group 3 &middot; CSE Dept &middot; B.Tech 2024-25</p>
+    </div>
+  </footer>
+  <script src="script.js"></script><script>requireLogin();</script>
+</body>
+</html>

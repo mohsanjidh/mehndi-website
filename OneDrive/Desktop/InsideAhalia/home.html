@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inside Ahalia | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Inside <span>Ahalia</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html" id="nav-home" data-i18n="navHome">Home</a>
+      <a href="inside.html" id="nav-inside" data-i18n="navInside">Inside Ahalia</a>
+      <a href="about.html" id="nav-about" data-i18n="navAbout">About</a>
+      <a href="contact.html" id="nav-contact" data-i18n="navContact">Contact</a>
+      <a href="index.html" class="btn-logout" onclick="doLogout();return false;" data-i18n="navLogout">Logout</a>
+      <div class="lang-switcher nav-lang-mobile">
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="ml" onclick="switchLang('ml')">ML</button>
+        <button class="lang-btn" data-lang="hi" onclick="switchLang('hi')">HI</button>
+      </div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" data-lang="ml" onclick="switchLang('ml')">ML</button>
+      <button class="lang-btn" data-lang="hi" onclick="switchLang('hi')">HI</button>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="page-body">
+    <div class="hero">
+      <div class="hero-eyebrow" data-i18n="eyebrow">Ahalia Campus &middot; CSE Department</div>
+      <h1 data-i18n="heroTitle">Navigate Your Campus Like <em>Never Before</em></h1>
+      <p class="hero-desc" data-i18n="heroDesc">Inside Ahalia is a smart campus navigation system.</p>
+      <div class="hero-stats">
+        <div class="stat-item"><h3>1+</h3><p data-i18n="statFloors">Floors Mapped</p></div>
+        <div class="stat-item"><h3>60+</h3><p data-i18n="statRooms">Rooms Covered</p></div>
+        <div class="stat-item"><h3>Live</h3><p data-i18n="statLive">Event Updates</p></div>
+      </div>
+    </div>
+    <div class="section-divider"><h2 data-i18n="whyTitle">Why Inside Ahalia?</h2><div class="divider-line"></div></div>
+    <div class="info-cards">
+      <div class="info-card"><div class="info-card-icon">&#128506;</div><h3 data-i18n="feat1Title">Floor-by-Floor Navigation</h3><p data-i18n="feat1Desc">Browse every floor with complete room numbers and directions.</p></div>
+      <div class="info-card"><div class="info-card-icon">&#127881;</div><h3 data-i18n="feat2Title">Live Event Guidance</h3><p data-i18n="feat2Desc">See workshops, quizzes and seminars with real-time room assignments.</p></div>
+      <div class="info-card"><div class="info-card-icon">&#128309;</div><h3 data-i18n="feat3Title">QR + 3D Navigation</h3><p data-i18n="feat3Desc">Scan QR codes to get your live position. Unity 3D coming next.</p></div>
+      <div class="info-card"><div class="info-card-icon">&#9855;</div><h3 data-i18n="feat4Title">Accessible for Everyone</h3><p data-i18n="feat4Desc">Works on any device for students, parents, guests and faculty.</p></div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="nav-logo">Inside <span>Ahalia</span></div><p data-i18n="footerDesc">Smart Campus Navigation System.</p></div>
+      <div class="footer-links-group"><h4 data-i18n="footerNav">Navigate</h4><a href="home.html" data-i18n="navHome">Home</a><a href="inside.html" data-i18n="navInside">Inside Ahalia</a><a href="events.html" data-i18n="eventsCard">Events</a></div>
+      <div class="footer-links-group"><h4 data-i18n="footerInfo">Information</h4><a href="about.html" data-i18n="navAbout">About Us</a><a href="contact.html" data-i18n="navContact">Contact</a><a onclick="openModal('privacy')" data-i18n="footerPrivacy">Privacy Policy</a><a onclick="openModal('terms')" data-i18n="footerTerms">Terms of Use</a></div>
+      <div class="footer-links-group"><h4 data-i18n="footerInst">Institution</h4><a>Ahalia School of Engineering</a><a>CSE Department</a><a>Palakkad, Kerala</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> <span>Inside Ahalia</span> &middot; <span data-i18n="footerRights">All rights reserved.</span></p>
+      <p data-i18n="footerBuilt">Built by Group 3 &middot; CSE Dept &middot; B.Tech 2024-25</p>
+    </div>
+  </footer>
+  <div class="modal-overlay" id="modal-privacy"><div class="modal-box"><button class="modal-close" onclick="closeModal('privacy')">&#10005;</button><h3>Privacy Policy</h3><p>We collect your name and college name only to personalise your session. Cleared on logout. Never shared.</p></div></div>
+  <div class="modal-overlay" id="modal-terms"><div class="modal-box"><button class="modal-close" onclick="closeModal('terms')">&#10005;</button><h3>Terms of Use</h3><ul><li>For authorised visitors of Ahalia School of Engineering only.</li><li>Navigation info is for guidance and may vary.</li><li>Do not redistribute without permission.</li></ul></div></div>
+  <script src="script.js"></script>
+  <script>requireLogin(); showWelcomeToast();</script>
+</body>
+</html>

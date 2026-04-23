@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inside Ahalia | Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">Inside <span>Ahalia</span></div>
+    <div class="nav-links" id="navLinks">
+      <a href="home.html" id="nav-home" data-i18n="navHome">Home</a>
+      <a href="inside.html" id="nav-inside" data-i18n="navInside">Inside Ahalia</a>
+      <a href="about.html" id="nav-about" data-i18n="navAbout">About</a>
+      <a href="contact.html" id="nav-contact" data-i18n="navContact">Contact</a>
+      <a href="index.html" class="btn-logout" onclick="doLogout();return false;" data-i18n="navLogout">Logout</a>
+      <div class="lang-switcher nav-lang-mobile">
+        <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" data-lang="ml" onclick="switchLang('ml')">ML</button>
+        <button class="lang-btn" data-lang="hi" onclick="switchLang('hi')">HI</button>
+      </div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" data-lang="ml" onclick="switchLang('ml')">ML</button>
+      <button class="lang-btn" data-lang="hi" onclick="switchLang('hi')">HI</button>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="page-body">
+    <div class="about-grid">
+      <div class="about-block">
+        <h3 data-i18n="contactTitle">Contact Info</h3>
+        <div class="contact-item"><span class="contact-icon">&#127979;</span><div><div class="contact-label" data-i18n="contactInst">Institution</div><div class="contact-value" data-i18n="contactInstVal">Ahalia School of Engineering &amp; Technology</div></div></div>
+        <div class="contact-item"><span class="contact-icon">&#128205;</span><div><div class="contact-label" data-i18n="contactLoc">Location</div><div class="contact-value" data-i18n="contactLocVal">Palakkad, Kerala, India</div></div></div>
+        <div class="contact-item"><span class="contact-icon">&#127891;</span><div><div class="contact-label" data-i18n="contactDept">Department</div><div class="contact-value" data-i18n="contactDeptVal">Computer Science &amp; Engineering</div></div></div>
+        <div class="contact-item"><span class="contact-icon">&#128231;</span><div><div class="contact-label" data-i18n="contactEmail">Email</div><div class="contact-value">cse@ahalia.ac.in</div></div></div>
+      </div>
+      <div class="about-block">
+        <h3 data-i18n="teamTitle">Project Team - Group 3</h3>
+        <p style="margin-bottom:20px" data-i18n="teamSub">Smart Campus Indoor Navigation System</p>
+        <div class="contact-item"><span class="contact-icon">&#128187;</span><div><div class="contact-label" data-i18n="teamType">Project Type</div><div class="contact-value" data-i18n="teamTypeVal">B.Tech Final Year Project</div></div></div>
+        <div class="contact-item"><span class="contact-icon">&#129517;</span><div><div class="contact-label" data-i18n="teamStack">Tech Stack</div><div class="contact-value" data-i18n="teamStackVal">HTML &middot; CSS &middot; JS &middot; Unity 3D &middot; QR</div></div></div>
+        <div class="contact-item"><span class="contact-icon">&#128197;</span><div><div class="contact-label" data-i18n="teamYear">Academic Year</div><div class="contact-value" data-i18n="teamYearVal">2024 - 2025</div></div></div>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="nav-logo">Inside <span>Ahalia</span></div><p data-i18n="footerDesc">Smart Campus Navigation System.</p></div>
+      <div class="footer-links-group"><h4 data-i18n="footerNav">Navigate</h4><a href="home.html" data-i18n="navHome">Home</a><a href="inside.html" data-i18n="navInside">Inside Ahalia</a></div>
+      <div class="footer-links-group"><h4 data-i18n="footerInfo">Information</h4><a href="about.html" data-i18n="navAbout">About Us</a><a href="contact.html" data-i18n="navContact">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> <span>Inside Ahalia</span> &middot; <span data-i18n="footerRights">All rights reserved.</span></p>
+      <p data-i18n="footerBuilt">Built by Group 3 &middot; CSE Dept &middot; B.Tech 2024-25</p>
+    </div>
+  </footer>
+  <script src="script.js"></script><script>requireLogin();</script>
+</body>
+</html>
+```
+
+--- 
+
+**Quick reminder — your folder must have these 10 files:**
+```
+InsideAhalia/
+  index.html
+  home.html
+  inside.html
+  campus.html
+  events.html
+  about.html
+  contact.html
+  style.css
+  script.js
+  campus_bg.jpg   ← keep from previous download, don't delete!
